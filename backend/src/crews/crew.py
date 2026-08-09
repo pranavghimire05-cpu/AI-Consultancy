@@ -88,14 +88,16 @@ class StudyAbroadCrew:
   def run(
       self,
       academic_background: str,
+      gpa_score: str,
       test_scores: str,
       budget: str,
-      field_of_study: str,
-  ) -> str:
+      field_of_study: str
+    ) -> str:
     crew = self.assemble_crew()
     result = crew.kickoff(
         inputs={
             "academic_background": academic_background,
+            "gpa_score": gpa_score,
             "test_scores": test_scores,
             "budget": budget,
             "field_of_study": field_of_study,

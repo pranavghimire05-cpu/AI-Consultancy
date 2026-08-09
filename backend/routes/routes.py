@@ -6,7 +6,10 @@ router = APIRouter(prefix="/api/v1", tags=["Study Abroad Consultancy"])
 
 
 class StudyAbroadRequest(BaseModel):
-  academic_background: str = Field(..., description="Bachelor's in Computer Science, CGPA: 3.2/4.0")
+  academic_background: str = Field(
+      ..., description="Bachelor's in Computer Science"
+  )
+  gpa_score: str = Field(..., description="CGPA: 3.2/4.0")
   test_scores: str = Field(..., description="IELTS: 7.5 overall")
   budget: str = Field(..., description="$25,000 USD per year max")
   field_of_study: str = Field(
@@ -29,6 +32,7 @@ def run_study_abroad_consultation(request: StudyAbroadRequest):
     crew_runner = StudyAbroadCrew()
     result = crew_runner.run(
         academic_background=request.academic_background,
+        gpa_score=request.gpa_score,
         test_scores=request.test_scores,
         budget=request.budget,
         field_of_study=request.field_of_study,

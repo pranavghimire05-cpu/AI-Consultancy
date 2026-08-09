@@ -19,6 +19,7 @@ class EvaluatorPrompts:
   TASK_DESCRIPTION = (
       "Evaluate the student profile thoroughly:\n"
       "- Academic Background: {academic_background}\n"
+      "- gpa_score: {gpa_score}\n"
       "- Test Scores: {test_scores}\n"
       "- Budget: {budget}\n"
       "- Preferred Field of Study: {field_of_study}\n"
